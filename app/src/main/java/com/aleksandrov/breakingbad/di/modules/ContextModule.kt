@@ -1,4 +1,4 @@
-package com.aleksandrov.breakingbad.di
+package com.aleksandrov.breakingbad.di.modules
 
 import android.app.Application
 import android.content.Context

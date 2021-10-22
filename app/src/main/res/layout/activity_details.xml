@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/cast_bb_700x1000_walter_white_lg" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_18"
+        app:layout_constraintBottom_toTopOf="@id/occupation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img"
+        tools:text="Walter White" />
+
+    <TextView
+        android:id="@+id/birthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_horizontal_10"
+        android:textSize="@dimen/text_size_18"
+        app:layout_constraintBottom_toBottomOf="@id/name"
+        app:layout_constraintStart_toEndOf="@id/name"
+        app:layout_constraintTop_toTopOf="@id/name"
+        tools:text="09-07-1958" />
+
+    <TextView
+        android:id="@+id/occupation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_18"
+        app:layout_constraintBottom_toTopOf="@id/status"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        tools:text="High School Chemistry Teacher, Meth King Pin" />
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_18"
+        app:layout_constraintBottom_toTopOf="@id/nickname"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/occupation"
+        tools:text="Presumed dead" />
+
+    <TextView
+        android:id="@+id/nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_18"
+        app:layout_constraintBottom_toTopOf="@id/appearance_prev"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/status"
+        tools:text="Heisenberg" />
+
+    <TextView
+        android:id="@+id/appearance_prev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_18"
+        app:layout_constraintBottom_toTopOf="@+id/portrayed_prev"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nickname"
+        tools:text="Seasons: " />
+
+    <TextView
+        android:id="@+id/appearance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_18"
+        app:layout_constraintBottom_toBottomOf="@id/appearance_prev"
+        app:layout_constraintStart_toEndOf="@id/appearance_prev"
+        app:layout_constraintTop_toTopOf="@id/appearance_prev"
+        tools:text="1, 2, 3, 4, 5" />
+
+    <TextView
+        android:id="@+id/portrayed_prev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_18"
+        app:layout_constraintBottom_toTopOf="@id/better_call_saul_appearance_prev"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appearance_prev"
+        tools:text="Actor: " />
+
+    <TextView
+        android:id="@+id/portrayed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_18"
+        app:layout_constraintBottom_toBottomOf="@id/portrayed_prev"
+        app:layout_constraintStart_toEndOf="@id/portrayed_prev"
+        app:layout_constraintTop_toTopOf="@id/portrayed_prev"
+        tools:text="Bryan Cranston" />
+
+    <TextView
+        android:id="@+id/better_call_saul_appearance_prev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_18"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/portrayed_prev"
+        tools:text="Better Сall Saul seasons: " />
+
+    <TextView
+        android:id="@+id/better_call_saul_appearance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_18"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/better_call_saul_appearance_prev"
+        app:layout_constraintStart_toEndOf="@id/better_call_saul_appearance_prev"
+        app:layout_constraintTop_toTopOf="@id/better_call_saul_appearance_prev"
+        tools:text="1, 2, 3, 4, 5" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,6 +14,9 @@ class App : Application() {
         component = DaggerAppComponent.builder().create(this).build()
     }
 
+    /**
+     * Получить компонент приложения
+     */
     fun getComponent(): AppComponent {
         return component
     }
