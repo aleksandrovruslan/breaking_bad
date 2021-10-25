@@ -52,7 +52,10 @@ class ViewModelsModule {
 
     @Singleton
     @Provides
-    fun provide(viewModelFactories: Map<Class<out ViewModel>, @JvmSuppressWildcards Provider<ViewModel>>): ViewModelProvider.Factory {
+    fun provideViewModelFactory(
+        viewModelFactories: Map<Class<out ViewModel>,
+                @JvmSuppressWildcards Provider<ViewModel>>,
+    ): ViewModelProvider.Factory {
         return ViewModelFactory(viewModelFactories)
     }
 

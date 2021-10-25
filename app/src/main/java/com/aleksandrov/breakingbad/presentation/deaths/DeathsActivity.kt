@@ -3,6 +3,7 @@ package com.aleksandrov.breakingbad.presentation.deaths
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.aleksandrov.breakingbad.R
 import com.aleksandrov.breakingbad.appComponent
@@ -12,8 +13,9 @@ import javax.inject.Inject
 class DeathsActivity : BaseActivity(R.layout.activity_deaths) {
 
     @Inject
-    lateinit var deathCountViewModel: DeathCountViewModel
+    lateinit var factory: ViewModelProvider.Factory
 
+    private lateinit var deathCountViewModel: DeathCountViewModel
     private lateinit var message: TextView
     private lateinit var swipeLayout: SwipeRefreshLayout
 
@@ -21,6 +23,12 @@ class DeathsActivity : BaseActivity(R.layout.activity_deaths) {
         super.onCreate(savedInstanceState)
 
         appComponent.inject(this)
+
+        initView()
+    }
+
+    private fun initView() {
+        deathCountViewModel = ViewModelProvider(this, factory).get(DeathCountViewModel::class.java)
 
         message = findViewById(R.id.message)
         swipeLayout = findViewById(R.id.swipe_layout)
@@ -35,8 +43,8 @@ class DeathsActivity : BaseActivity(R.layout.activity_deaths) {
             }
         }
         deathCountViewModel.error.observe(this) {
-            it.getContentIfNotHandled()?.also {
-                Toast.makeText(this, it, Toast.LENGTH_LONG).show()
+            it.getContentIfNotHandled()?.also { message ->
+                Toast.makeText(this, message, Toast.LENGTH_LONG).show()
             }
         }
     }

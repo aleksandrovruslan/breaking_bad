@@ -7,6 +7,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.aleksandrov.breakingbad.R
 import com.aleksandrov.breakingbad.appComponent
 import com.bumptech.glide.Glide
@@ -17,8 +18,9 @@ const val CHARACTER_ID = "CHARACTER_ID"
 class DetailsActivity : AppCompatActivity() {
 
     @Inject
-    lateinit var viewModel: DetailsViewModel
+    lateinit var factory: ViewModelProvider.Factory
 
+    private lateinit var viewModel: DetailsViewModel
     private lateinit var img: ImageView
     private lateinit var name: TextView
     private lateinit var birthday: TextView
@@ -41,6 +43,8 @@ class DetailsActivity : AppCompatActivity() {
     }
 
     private fun initView() {
+        viewModel = ViewModelProvider(this, factory).get(DetailsViewModel::class.java)
+
         val id: Int = intent.getIntExtra(CHARACTER_ID, -1)
         viewModel.loadCharacterById(id)
 

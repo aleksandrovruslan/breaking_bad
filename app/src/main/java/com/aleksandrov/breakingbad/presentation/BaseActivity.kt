@@ -20,11 +20,11 @@ abstract class BaseActivity(@LayoutRes private val layoutRes: Int) : AppCompatAc
         bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.characters -> {
-                    checkActivity(CharactersActivity::class.java)
+                    openActivity(CharactersActivity::class.java)
                     true
                 }
                 R.id.deaths -> {
-                    checkActivity(DeathsActivity::class.java)
+                    openActivity(DeathsActivity::class.java)
                     true
                 }
                 else -> false
@@ -32,7 +32,7 @@ abstract class BaseActivity(@LayoutRes private val layoutRes: Int) : AppCompatAc
         }
     }
 
-    private fun checkActivity(clazz: Class<out BaseActivity>) {
+    private fun openActivity(clazz: Class<out BaseActivity>) {
         javaClass.also {
             if (it != clazz) {
                 val intent = Intent(this, clazz)
