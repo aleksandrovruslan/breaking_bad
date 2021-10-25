@@ -3,13 +3,13 @@ package com.aleksandrov.breakingbad.presentation.deaths
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.aleksandrov.breakingbad.R
 import com.aleksandrov.breakingbad.appComponent
+import com.aleksandrov.breakingbad.presentation.BaseActivity
 import javax.inject.Inject
 
-class DeathsActivity : AppCompatActivity() {
+class DeathsActivity : BaseActivity(R.layout.activity_deaths) {
 
     @Inject
     lateinit var deathCountViewModel: DeathCountViewModel
@@ -19,7 +19,6 @@ class DeathsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_deaths)
 
         appComponent.inject(this)
 
