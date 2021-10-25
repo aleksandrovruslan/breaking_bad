@@ -5,11 +5,11 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.aleksandrov.breakingbad.R
 import com.aleksandrov.breakingbad.appComponent
+import com.aleksandrov.breakingbad.utils.showError
 import com.bumptech.glide.Glide
 import javax.inject.Inject
 
@@ -85,9 +85,7 @@ class DetailsActivity : AppCompatActivity() {
             }
         }
         viewModel.error.observe(this) {
-            it.getContentIfNotHandled()?.also { message ->
-                Toast.makeText(this, message, Toast.LENGTH_LONG).show()
-            }
+            it.getContentIfNotHandled()?.also(img::showError)
         }
     }
 

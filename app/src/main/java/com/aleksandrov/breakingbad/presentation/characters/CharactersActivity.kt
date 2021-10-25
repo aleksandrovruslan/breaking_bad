@@ -2,7 +2,6 @@ package com.aleksandrov.breakingbad.presentation.characters
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,6 +11,7 @@ import com.aleksandrov.breakingbad.appComponent
 import com.aleksandrov.breakingbad.presentation.BaseActivity
 import com.aleksandrov.breakingbad.presentation.characterdetails.CHARACTER_ID
 import com.aleksandrov.breakingbad.presentation.characterdetails.DetailsActivity
+import com.aleksandrov.breakingbad.utils.showError
 import javax.inject.Inject
 
 class CharactersActivity : BaseActivity(R.layout.activity_characters), OnItemClickListener {
@@ -48,9 +48,7 @@ class CharactersActivity : BaseActivity(R.layout.activity_characters), OnItemCli
         viewModel.loadCharacters()
 
         viewModel.error.observe(this) {
-            it.getContentIfNotHandled()?.also { error ->
-                Toast.makeText(this, error, Toast.LENGTH_LONG).show()
-            }
+            it.getContentIfNotHandled()?.also(swipeLayout::showError)
         }
 
         viewModel.characters.observe(this) {
