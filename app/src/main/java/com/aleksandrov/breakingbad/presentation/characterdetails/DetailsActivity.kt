@@ -5,10 +5,11 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.aleksandrov.breakingbad.R
 import com.aleksandrov.breakingbad.appComponent
+import com.aleksandrov.breakingbad.utils.showError
 import com.bumptech.glide.Glide
 import javax.inject.Inject
 
@@ -17,8 +18,9 @@ const val CHARACTER_ID = "CHARACTER_ID"
 class DetailsActivity : AppCompatActivity() {
 
     @Inject
-    lateinit var viewModel: DetailsViewModel
+    lateinit var factory: ViewModelProvider.Factory
 
+    private lateinit var viewModel: DetailsViewModel
     private lateinit var img: ImageView
     private lateinit var name: TextView
     private lateinit var birthday: TextView
@@ -41,6 +43,8 @@ class DetailsActivity : AppCompatActivity() {
     }
 
     private fun initView() {
+        viewModel = ViewModelProvider(this, factory).get(DetailsViewModel::class.java)
+
         val id: Int = intent.getIntExtra(CHARACTER_ID, -1)
         viewModel.loadCharacterById(id)
 
@@ -81,9 +85,7 @@ class DetailsActivity : AppCompatActivity() {
             }
         }
         viewModel.error.observe(this) {
-            it.getContentIfNotHandled()?.also { message ->
-                Toast.makeText(this, message, Toast.LENGTH_LONG).show()
-            }
+            it.getContentIfNotHandled()?.also(img::showError)
         }
     }
 
