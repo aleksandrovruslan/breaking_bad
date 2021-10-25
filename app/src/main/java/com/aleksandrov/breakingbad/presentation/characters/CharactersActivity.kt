@@ -3,17 +3,17 @@ package com.aleksandrov.breakingbad.presentation.characters
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.aleksandrov.breakingbad.R
 import com.aleksandrov.breakingbad.appComponent
+import com.aleksandrov.breakingbad.presentation.BaseActivity
 import com.aleksandrov.breakingbad.presentation.characterdetails.CHARACTER_ID
 import com.aleksandrov.breakingbad.presentation.characterdetails.DetailsActivity
 import javax.inject.Inject
 
-class CharactersActivity : AppCompatActivity(), OnItemClickListener {
+class CharactersActivity : BaseActivity(R.layout.activity_characters), OnItemClickListener {
 
     @Inject
     lateinit var viewModel: CharactersViewModel
@@ -26,7 +26,6 @@ class CharactersActivity : AppCompatActivity(), OnItemClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
         appComponent.inject(this)
 
