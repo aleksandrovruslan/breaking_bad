@@ -31,7 +31,13 @@ class EpisodesViewModel @Inject constructor(
         if (reload || _reload) {
             _progress.value = Event(true)
             disposables.add(
-                Single.fromCallable { interactor.loadEpisodes() }
+                Single.fromCallable {
+                    if (reload) {
+                        interactor.loadRemoteEpisodes()
+                    } else {
+                        interactor.loadEpisodes()
+                    }
+                }
                     .subscribeOn(schedulers.io())
                     .observeOn(schedulers.ui())
                     .subscribe({

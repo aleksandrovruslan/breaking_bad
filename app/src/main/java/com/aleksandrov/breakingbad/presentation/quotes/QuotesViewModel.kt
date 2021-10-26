@@ -30,7 +30,13 @@ class QuotesViewModel @Inject constructor(
         if (reload || _reload) {
             _progress.value = Event(false)
             disposables.add(
-                Single.fromCallable { interactor.loadQuotes() }
+                Single.fromCallable {
+                    if (reload) {
+                        interactor.loadRemoteQuotes()
+                    } else {
+                        interactor.loadQuotes()
+                    }
+                }
                     .subscribeOn(schedulers.io())
                     .observeOn(schedulers.ui())
                     .subscribe({

@@ -16,21 +16,45 @@ class BBRepositoryImpl @Inject constructor(
 
     override fun getDeathCount(): DeathCount? = bbStore.getDeathCount() ?: getRemoteDeathCount()
 
-    override fun getRemoteDeathCount(): DeathCount? = bbApi.deathCount()
+    override fun getRemoteDeathCount(): DeathCount? =
+        bbApi.deathCount()?.also { bbStore.saveDeathCount(it) }
 
-    override fun getCharacters(): Array<Character>? = bbApi.characters()
+    override fun getCharacters(): List<Character>? =
+        bbStore.getCharacters() ?: getRemoteCharacters()
 
-    override fun characterById(id: Int): Character? = bbApi.characterById(id)
+    override fun getRemoteCharacters(): List<Character>? =
+        bbApi.characters()?.toList()?.also { bbStore.saveCharacters(it) }
 
-    override fun randomCharacter(): Character? = bbApi.randomCharacter()
+    override fun getCharacterById(id: Int): Character? =
+        bbStore.getCharacterById(id) ?: getRemoteCharacterById(id)
 
-    override fun findCharacterByName(name: String): Array<Character>? =
-        bbApi.findCharacterByName(name)
+    override fun getRemoteCharacterById(id: Int): Character? = bbApi.characterById(id)
 
-    override fun getEpisodes(): Array<Episode>? = bbApi.getEpisodes()
+    override fun getRandomCharacter(): Character? =
+        bbStore.getRandomCharacter() ?: getRemoteRandomCharacter()
 
-    override fun getEpisodeById(id: Int): Array<Episode>? = bbApi.getEpisodeById(id)
+    override fun getRemoteRandomCharacter(): Character? = bbApi.randomCharacter()
 
-    override fun getQuotes(): Array<Quote>? = bbApi.getQuotes()
+    override fun findCharacterByName(name: String): List<Character>? =
+        bbStore.findCharacterByName(name) ?: findRemoteCharacterByName(name)
+
+    override fun findRemoteCharacterByName(name: String): List<Character>? =
+        bbApi.findCharacterByName(name)?.toList()
+
+    override fun getEpisodes(): List<Episode>? = bbStore.getEpisodes() ?: getRemoteEpisodes()
+
+    override fun getRemoteEpisodes(): List<Episode>? =
+        bbApi.getEpisodes()?.toList()?.also { bbStore.saveEpisodes(it) }
+
+    override fun getEpisodeById(id: Int): Episode? =
+        bbStore.getEpisodeById(id) ?: getRemoteEpisodeById(id)
+
+    override fun getRemoteEpisodeById(id: Int): Episode? =
+        bbApi.getEpisodeById(id)?.toList()?.first()
+
+    override fun getQuotes(): List<Quote>? = bbStore.getQuotes() ?: getRemoteQuotes()
+
+    override fun getRemoteQuotes(): List<Quote>? =
+        bbApi.getQuotes()?.toList()?.also { bbStore.saveQuotes(it) }
 
 }

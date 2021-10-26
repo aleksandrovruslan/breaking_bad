@@ -52,7 +52,7 @@ class CharactersActivity : BaseActivity(R.layout.activity_characters), OnItemCli
         }
 
         viewModel.characters.observe(this) {
-            adapter.submitList(it.toMutableList())
+            adapter.submitList(it)
         }
 
         viewModel.progress.observe(this) {

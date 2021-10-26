@@ -5,6 +5,16 @@ import javax.inject.Inject
 
 class EpisodesInteractor @Inject constructor(private val repository: BBRepository) {
 
-    fun loadEpisodes(): List<Episode>? = repository.getEpisodes()?.toList()
+    /**
+     * Получить список эпизодов из хранилища
+     * @return список эпизодов
+     */
+    fun loadEpisodes(): List<Episode>? = repository.getEpisodes()
+
+    /**
+     * Получить список эпизодов с сервера
+     * @return список эпизодов
+     */
+    fun loadRemoteEpisodes(): List<Episode>? = repository.getRemoteEpisodes()
 
 }

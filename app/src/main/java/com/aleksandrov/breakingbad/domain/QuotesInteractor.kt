@@ -5,6 +5,16 @@ import javax.inject.Inject
 
 class QuotesInteractor @Inject constructor(private val repository: BBRepository) {
 
-    fun loadQuotes(): List<Quote>? = repository.getQuotes()?.toList()
+    /**
+     * Получить список цитат из хранилища
+     * @return список цитат
+     */
+    fun loadQuotes(): List<Quote>? = repository.getQuotes()
+
+    /**
+     * Получить список цитат с сервера
+     * @return список цитат
+     */
+    fun loadRemoteQuotes(): List<Quote>? = repository.getRemoteQuotes()
 
 }

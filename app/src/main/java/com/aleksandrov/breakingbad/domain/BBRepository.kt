@@ -11,7 +11,7 @@ import com.aleksandrov.breakingbad.models.Quote
 interface BBRepository {
 
     /**
-     * Получить количество смертей из базы данных
+     * Получить количество смертей из хранилища
      * , если нет данных, то получаем с сервера
      * @return количество смертей
      */
@@ -24,48 +24,93 @@ interface BBRepository {
     fun getRemoteDeathCount(): DeathCount?
 
     /**
-     * Получить список список персонажей
+     * Получить список список персонажей из хранилища
      * @return персонажи
      */
-    fun getCharacters(): Array<Character>?
+    fun getCharacters(): List<Character>?
 
     /**
-     * Получить персонажа по id
+     * Получить список список персонажей с сервера
+     * @return персонажи
+     */
+    fun getRemoteCharacters(): List<Character>?
+
+    /**
+     * Получить персонажа по id из хранилища
      * @param id - id персонажа
      * @return персонаж
      */
-    fun characterById(id: Int): Character?
+    fun getCharacterById(id: Int): Character?
 
     /**
-     * Получить случайного персонажа
+     * Получить персонажа по id с сервера
+     * @param id - id персонажа
      * @return персонаж
      */
-    fun randomCharacter(): Character?
+    fun getRemoteCharacterById(id: Int): Character?
 
     /**
-     * Получить список персонажа по имени
+     * Получить случайного персонажа из хранилища
+     * @return персонаж
+     */
+    fun getRandomCharacter(): Character?
+
+    /**
+     * Получить случайного персонажа с сервера
+     * @return персонаж
+     */
+    fun getRemoteRandomCharacter(): Character?
+
+    /**
+     * Получить список персонажа по имени из хранилища
      * @param name - имя персонажа
      * @return список персонажей
      */
-    fun findCharacterByName(name: String): Array<Character>?
+    fun findCharacterByName(name: String): List<Character>?
 
     /**
-     * Получить список эпизодов
+     * Получить список персонажа по имени с сервера
+     * @param name - имя персонажа
+     * @return список персонажей
+     */
+    fun findRemoteCharacterByName(name: String): List<Character>?
+
+    /**
+     * Получить список эпизодов из хранилища
      * @return список эпизодов
      */
-    fun getEpisodes(): Array<Episode>?
+    fun getEpisodes(): List<Episode>?
 
     /**
-     * Получить эпизод по id
+     * Получить список эпизодов с сервера
+     * @return список эпизодов
+     */
+    fun getRemoteEpisodes(): List<Episode>?
+
+    /**
+     * Получить эпизод по id из хранилища
      * @param id - id эпизода
      * @return эпизод
      */
-    fun getEpisodeById(id: Int): Array<Episode>?
+    fun getEpisodeById(id: Int): Episode?
 
     /**
-     * Получить список цитат
+     * Получить эпизод по id с сервера
+     * @param id - id эпизода
+     * @return эпизод
+     */
+    fun getRemoteEpisodeById(id: Int): Episode?
+
+    /**
+     * Получить список цитат из хранилища
      * @return список цитат
      */
-    fun getQuotes(): Array<Quote>?
+    fun getQuotes(): List<Quote>?
+
+    /**
+     * Получить список цитат с сервера
+     * @return список цитат
+     */
+    fun getRemoteQuotes(): List<Quote>?
 
 }

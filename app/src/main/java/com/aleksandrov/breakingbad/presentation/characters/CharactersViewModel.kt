@@ -19,13 +19,13 @@ class CharactersViewModel @Inject constructor(
 ) :
     ViewModel() {
 
-    private val _characters: MutableLiveData<Array<Character>> = MutableLiveData()
+    private val _characters: MutableLiveData<List<Character>> = MutableLiveData()
     private val _error: MutableLiveData<Event<String>> = MutableLiveData()
     private val _progress: MutableLiveData<Event<Boolean>> = MutableLiveData()
     private val disposables: CompositeDisposable = CompositeDisposable()
     private var _reload = true
 
-    val characters: LiveData<Array<Character>> = _characters
+    val characters: LiveData<List<Character>> = _characters
     val error: LiveData<Event<String>> = _error
     val progress: LiveData<Event<Boolean>> = _progress
 
@@ -36,7 +36,13 @@ class CharactersViewModel @Inject constructor(
         if (reload || _reload) {
             _progress.value = Event(true)
             disposables.add(
-                Single.fromCallable { interactor.getCharacters() }
+                Single.fromCallable {
+                    if (reload) {
+                        interactor.getRemoteCharacters()
+                    } else {
+                        interactor.getCharacters()
+                    }
+                }
                     .subscribeOn(schedulers.io())
                     .observeOn(schedulers.ui())
                     .subscribe(

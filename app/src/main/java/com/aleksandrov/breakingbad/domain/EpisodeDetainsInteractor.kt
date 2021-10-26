@@ -5,6 +5,11 @@ import javax.inject.Inject
 
 class EpisodeDetainsInteractor @Inject constructor(private var repository: BBRepository) {
 
-    fun loadEpisodeById(id: Int): Episode? = repository.getEpisodeById(id)?.first()
+    /**
+     * Получить эпизод по id
+     * @param id - id эпизода
+     * @return эпизод
+     */
+    fun loadEpisodeById(id: Int): Episode? = repository.getEpisodeById(id)
 
 }

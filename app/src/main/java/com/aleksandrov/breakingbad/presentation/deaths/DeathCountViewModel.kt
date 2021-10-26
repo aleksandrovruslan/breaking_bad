@@ -31,7 +31,13 @@ class DeathCountViewModel @Inject constructor(
     fun loadDeathCount(reload: Boolean = false) {
         if (reload || _reload) {
             _progress.value = Event(true)
-            disposables.add(Single.fromCallable { interactor.getDeathCount() }
+            disposables.add(Single.fromCallable {
+                if (reload) {
+                    interactor.getRemoteDeathCount()
+                } else {
+                    interactor.getDeathCount()
+                }
+            }
                 .subscribeOn(schedulers.io())
                 .observeOn(schedulers.ui())
                 .subscribe(
