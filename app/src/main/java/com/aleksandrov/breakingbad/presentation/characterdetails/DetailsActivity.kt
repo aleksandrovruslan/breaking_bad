@@ -5,17 +5,17 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.aleksandrov.breakingbad.R
 import com.aleksandrov.breakingbad.appComponent
+import com.aleksandrov.breakingbad.presentation.BaseActivity
 import com.aleksandrov.breakingbad.utils.showError
 import com.bumptech.glide.Glide
 import javax.inject.Inject
 
 const val CHARACTER_ID = "CHARACTER_ID"
 
-class DetailsActivity : AppCompatActivity() {
+class DetailsActivity : BaseActivity(R.layout.activity_details) {
 
     @Inject
     lateinit var factory: ViewModelProvider.Factory
@@ -35,7 +35,6 @@ class DetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_details)
 
         appComponent.inject(this)
 

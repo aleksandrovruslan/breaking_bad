@@ -13,4 +13,16 @@
         android:icon="@drawable/ic_deaths"
         android:title="@string/deaths" />
 
+    <item
+        android:id="@+id/episodes"
+        android:enabled="true"
+        android:icon="@drawable/ic_episodes"
+        android:title="@string/episodes" />
+
+    <item
+        android:id="@+id/quotes"
+        android:enabled="true"
+        android:icon="@drawable/ic_episodes"
+        android:title="@string/quotes" />
+
 </menu>

@@ -2,6 +2,8 @@ package com.aleksandrov.breakingbad.domain
 
 import com.aleksandrov.breakingbad.models.Character
 import com.aleksandrov.breakingbad.models.DeathCount
+import com.aleksandrov.breakingbad.models.Episode
+import com.aleksandrov.breakingbad.models.Quote
 
 /**
  * Репозиторий для работы с данными
@@ -46,5 +48,24 @@ interface BBRepository {
      * @return список персонажей
      */
     fun findCharacterByName(name: String): Array<Character>?
+
+    /**
+     * Получить список эпизодов
+     * @return список эпизодов
+     */
+    fun getEpisodes(): Array<Episode>?
+
+    /**
+     * Получить эпизод по id
+     * @param id - id эпизода
+     * @return эпизод
+     */
+    fun getEpisodeById(id: Int): Array<Episode>?
+
+    /**
+     * Получить список цитат
+     * @return список цитат
+     */
+    fun getQuotes(): Array<Quote>?
 
 }

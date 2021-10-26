@@ -5,6 +5,8 @@ import com.aleksandrov.breakingbad.data.network.BreakingBadApi
 import com.aleksandrov.breakingbad.domain.BBRepository
 import com.aleksandrov.breakingbad.models.Character
 import com.aleksandrov.breakingbad.models.DeathCount
+import com.aleksandrov.breakingbad.models.Episode
+import com.aleksandrov.breakingbad.models.Quote
 import javax.inject.Inject
 
 class BBRepositoryImpl @Inject constructor(
@@ -24,5 +26,11 @@ class BBRepositoryImpl @Inject constructor(
 
     override fun findCharacterByName(name: String): Array<Character>? =
         bbApi.findCharacterByName(name)
+
+    override fun getEpisodes(): Array<Episode>? = bbApi.getEpisodes()
+
+    override fun getEpisodeById(id: Int): Array<Episode>? = bbApi.getEpisodeById(id)
+
+    override fun getQuotes(): Array<Quote>? = bbApi.getQuotes()
 
 }

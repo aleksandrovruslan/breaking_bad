@@ -2,4 +2,7 @@
     <string name="app_name">Breaking Bad</string>
     <string name="characters">characters</string>
     <string name="deaths">deaths</string>
+    <string name="episodes">episodes</string>
+    <string name="characters_mock">Walter White, Jesse Pinkman, Skyler White, Hank Schrader, Marie Schrader, Walter White Jr., Krazy-8, Bogdan Wolynetz</string>
+    <string name="quotes">quotes</string>
 </resources>

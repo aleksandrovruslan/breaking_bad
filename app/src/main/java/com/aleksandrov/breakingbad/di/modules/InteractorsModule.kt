@@ -1,9 +1,6 @@
 package com.aleksandrov.breakingbad.di.modules
 
-import com.aleksandrov.breakingbad.domain.BBInteractor
-import com.aleksandrov.breakingbad.domain.BBRepository
-import com.aleksandrov.breakingbad.domain.CharactersInteractor
-import com.aleksandrov.breakingbad.domain.DetailsInteractor
+import com.aleksandrov.breakingbad.domain.*
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -27,6 +24,24 @@ class InteractorsModule {
     @Singleton
     fun provideDetailsInteractor(repository: BBRepository): DetailsInteractor {
         return DetailsInteractor(repository)
+    }
+
+    @Provides
+    @Singleton
+    fun provideEpisodesInteractor(repository: BBRepository): EpisodesInteractor {
+        return EpisodesInteractor(repository)
+    }
+
+    @Provides
+    @Singleton
+    fun provideEpisodeDetainsInteractor(repository: BBRepository): EpisodeDetainsInteractor {
+        return EpisodeDetainsInteractor(repository)
+    }
+
+    @Provides
+    @Singleton
+    fun provideQuotesInteractor(repository: BBRepository): QuotesInteractor {
+        return QuotesInteractor(repository)
     }
 
 }
