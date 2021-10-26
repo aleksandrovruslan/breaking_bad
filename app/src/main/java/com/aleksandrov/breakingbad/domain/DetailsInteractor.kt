@@ -10,6 +10,6 @@ class DetailsInteractor @Inject constructor(private var repository: BBRepository
      * @param id - id персонажа
      * @return персонаж
      */
-    fun loadCharacterById(id: Int): Character? = repository.characterById(id)
+    fun loadCharacterById(id: Int): Character? = repository.getRemoteCharacterById(id)
 
 }

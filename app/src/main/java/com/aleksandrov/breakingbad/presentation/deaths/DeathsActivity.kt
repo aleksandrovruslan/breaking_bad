@@ -32,7 +32,9 @@ class DeathsActivity : BaseActivity(R.layout.activity_deaths) {
 
         message = findViewById(R.id.message)
         swipeLayout = findViewById(R.id.swipe_layout)
-        swipeLayout.setOnRefreshListener { deathCountViewModel.loadDeathCount() }
+        swipeLayout.setOnRefreshListener { deathCountViewModel.loadDeathCount(true) }
+
+        deathCountViewModel.loadDeathCount()
 
         deathCountViewModel.deathCount.observe(this) {
             message.text = "death count - $it"

@@ -38,7 +38,7 @@ class CharactersActivity : BaseActivity(R.layout.activity_characters), OnItemCli
         viewModel = ViewModelProvider(this, factory).get(CharactersViewModel::class.java)
 
         swipeLayout = findViewById(R.id.swipe_layout)
-        swipeLayout.setOnRefreshListener { onPullToRefresh() }
+        swipeLayout.setOnRefreshListener { viewModel.loadCharacters(true) }
 
         recyclerCharacters = findViewById(R.id.recycler_characters)
         recyclerCharacters.adapter = adapter
@@ -52,7 +52,7 @@ class CharactersActivity : BaseActivity(R.layout.activity_characters), OnItemCli
         }
 
         viewModel.characters.observe(this) {
-            adapter.submitList(it.toMutableList())
+            adapter.submitList(it)
         }
 
         viewModel.progress.observe(this) {
@@ -60,10 +60,6 @@ class CharactersActivity : BaseActivity(R.layout.activity_characters), OnItemCli
                 swipeLayout.isRefreshing = progress
             }
         }
-    }
-
-    private fun onPullToRefresh() {
-        viewModel.loadCharacters(true)
     }
 
     override fun onClick(id: Int) {

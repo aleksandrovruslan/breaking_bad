@@ -5,6 +5,9 @@ import com.aleksandrov.breakingbad.di.modules.*
 import com.aleksandrov.breakingbad.presentation.characterdetails.DetailsActivity
 import com.aleksandrov.breakingbad.presentation.characters.CharactersActivity
 import com.aleksandrov.breakingbad.presentation.deaths.DeathsActivity
+import com.aleksandrov.breakingbad.presentation.episodedetails.EpisodeDetailsActivity
+import com.aleksandrov.breakingbad.presentation.episodes.EpisodesActivity
+import com.aleksandrov.breakingbad.presentation.quotes.QuotesActivity
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -28,6 +31,12 @@ interface AppComponent {
 
     fun inject(activity: CharactersActivity)
 
-    fun inject(detailsActivity: DetailsActivity)
+    fun inject(activity: DetailsActivity)
+
+    fun inject(activity: EpisodesActivity)
+
+    fun inject(activity: EpisodeDetailsActivity)
+
+    fun inject(activity: QuotesActivity)
 
 }

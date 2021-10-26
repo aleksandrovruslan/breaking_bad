@@ -3,12 +3,13 @@ package com.aleksandrov.breakingbad.di.modules
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.aleksandrov.breakingbad.di.ViewModelKey
-import com.aleksandrov.breakingbad.domain.BBInteractor
-import com.aleksandrov.breakingbad.domain.CharactersInteractor
-import com.aleksandrov.breakingbad.domain.DetailsInteractor
+import com.aleksandrov.breakingbad.domain.*
 import com.aleksandrov.breakingbad.presentation.characterdetails.DetailsViewModel
 import com.aleksandrov.breakingbad.presentation.characters.CharactersViewModel
 import com.aleksandrov.breakingbad.presentation.deaths.DeathCountViewModel
+import com.aleksandrov.breakingbad.presentation.episodedetails.EpisodeDetailsViewModel
+import com.aleksandrov.breakingbad.presentation.episodes.EpisodesViewModel
+import com.aleksandrov.breakingbad.presentation.quotes.QuotesViewModel
 import com.aleksandrov.breakingbad.utils.SchedulersProvider
 import com.aleksandrov.breakingbad.utils.ViewModelFactory
 import dagger.Module
@@ -23,12 +24,8 @@ class ViewModelsModule {
     @ViewModelKey(DeathCountViewModel::class)
     @IntoMap
     @Provides
-    fun providesBBViewModel(
-        interactor: BBInteractor,
-        schedulers: SchedulersProvider,
-    ): ViewModel {
-        return DeathCountViewModel(interactor, schedulers)
-    }
+    fun providesBBViewModel(interactor: BBInteractor, schedulers: SchedulersProvider): ViewModel =
+        DeathCountViewModel(interactor, schedulers)
 
     @ViewModelKey(CharactersViewModel::class)
     @IntoMap
@@ -36,9 +33,7 @@ class ViewModelsModule {
     fun provideCharactersViewModel(
         interactor: CharactersInteractor,
         schedulers: SchedulersProvider,
-    ): ViewModel {
-        return CharactersViewModel(interactor, schedulers)
-    }
+    ): ViewModel = CharactersViewModel(interactor, schedulers)
 
     @ViewModelKey(DetailsViewModel::class)
     @IntoMap
@@ -46,9 +41,31 @@ class ViewModelsModule {
     fun provideDetailsViewModel(
         interactor: DetailsInteractor,
         schedulers: SchedulersProvider,
-    ): ViewModel {
-        return DetailsViewModel(interactor, schedulers)
-    }
+    ): ViewModel = DetailsViewModel(interactor, schedulers)
+
+    @ViewModelKey(EpisodesViewModel::class)
+    @IntoMap
+    @Provides
+    fun provideEpisodesViewModel(
+        interactor: EpisodesInteractor,
+        schedulers: SchedulersProvider,
+    ): ViewModel = EpisodesViewModel(interactor, schedulers)
+
+    @ViewModelKey(EpisodeDetailsViewModel::class)
+    @IntoMap
+    @Provides
+    fun provideEpisodeDetailsViewModel(
+        interactor: EpisodeDetainsInteractor,
+        schedulers: SchedulersProvider,
+    ): ViewModel = EpisodeDetailsViewModel(interactor, schedulers)
+
+    @ViewModelKey(QuotesViewModel::class)
+    @IntoMap
+    @Provides
+    fun provideQuotesViewModel(
+        interactor: QuotesInteractor,
+        schedulers: SchedulersProvider,
+    ): ViewModel = QuotesViewModel(interactor, schedulers)
 
     @Singleton
     @Provides

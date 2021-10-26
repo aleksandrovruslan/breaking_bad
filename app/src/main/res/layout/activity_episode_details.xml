@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.episodedetails.EpisodeDetailsActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_18"
+        app:layout_constraintBottom_toTopOf="@id/season_prv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Pilot" />
+
+    <TextView
+        android:id="@+id/season_prv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_18"
+        app:layout_constraintBottom_toTopOf="@id/air_date_prv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        tools:text="Season: " />
+
+    <TextView
+        android:id="@+id/season"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_18"
+        app:layout_constraintBottom_toBottomOf="@id/season_prv"
+        app:layout_constraintStart_toEndOf="@id/season_prv"
+        app:layout_constraintTop_toTopOf="@id/season_prv"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/air_date_prv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Air date: "
+        android:textSize="@dimen/text_size_18"
+        app:layout_constraintBottom_toTopOf="@id/characters"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/season_prv" />
+
+    <TextView
+        android:id="@+id/air_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_18"
+        app:layout_constraintBottom_toBottomOf="@id/air_date_prv"
+        app:layout_constraintStart_toEndOf="@id/air_date_prv"
+        app:layout_constraintTop_toTopOf="@id/air_date_prv"
+        tools:text="01-20-2008" />
+
+    <TextView
+        android:id="@+id/characters_prv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Characters: "
+        android:textSize="@dimen/text_size_18"
+        app:layout_constraintBottom_toTopOf="@id/episode_prv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/air_date_prv" />
+
+    <TextView
+        android:id="@+id/characters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_18"
+        app:layout_constraintBottom_toBottomOf="@id/characters_prv"
+        app:layout_constraintStart_toEndOf="@id/characters_prv"
+        app:layout_constraintTop_toTopOf="@id/characters_prv"
+        tools:text="@string/characters_mock" />
+
+    <TextView
+        android:id="@+id/episode_prv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_18"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/characters_prv"
+        tools:text="Episode: " />
+
+    <TextView
+        android:id="@+id/episode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_18"
+        app:layout_constraintBottom_toBottomOf="@id/episode_prv"
+        app:layout_constraintStart_toEndOf="@id/episode_prv"
+        app:layout_constraintTop_toTopOf="@id/episode_prv" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/nav_layout"
+        layout="@layout/nav_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,6 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BreakingBad">
         <activity
+            android:name=".presentation.quotes.QuotesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".presentation.episodedetails.EpisodeDetailsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".presentation.episodes.EpisodesActivity"
+            android:exported="true" />
+        <activity
             android:name=".presentation.characterdetails.DetailsActivity"
             android:exported="true" />
         <activity
@@ -27,13 +36,6 @@
         <activity
             android:name=".presentation.deaths.DeathsActivity"
             android:exported="true">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
         </activity>
     </application>
 

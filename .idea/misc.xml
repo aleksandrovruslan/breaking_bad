@@ -4,18 +4,25 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/aleks/AndroidStudioProjects/BreakingBad2/app/src/main/res/drawable/ic_characters.xml" value="0.15833333333333333" />
+        <entry key="..\:/Users/aleks/AndroidStudioProjects/BreakingBad2/app/src/main/res/drawable/ic_deaths.xml" value="0.15833333333333333" />
         <entry key="..\:/Users/aleks/AndroidStudioProjects/BreakingBad2/app/src/main/res/drawable/ic_menu_camera.xml" value="0.16111111111111112" />
         <entry key="..\:/Users/aleks/AndroidStudioProjects/BreakingBad2/app/src/main/res/drawable/side_nav_bar.xml" value="0.16111111111111112" />
         <entry key="..\:/Users/aleks/AndroidStudioProjects/BreakingBad2/app/src/main/res/layout/activity_characters.xml" value="0.2962085308056872" />
         <entry key="..\:/Users/aleks/AndroidStudioProjects/BreakingBad2/app/src/main/res/layout/activity_deaths.xml" value="0.13518518518518519" />
-        <entry key="..\:/Users/aleks/AndroidStudioProjects/BreakingBad2/app/src/main/res/layout/activity_details.xml" value="0.3910840932117528" />
+        <entry key="..\:/Users/aleks/AndroidStudioProjects/BreakingBad2/app/src/main/res/layout/activity_details.xml" value="0.2962085308056872" />
+        <entry key="..\:/Users/aleks/AndroidStudioProjects/BreakingBad2/app/src/main/res/layout/activity_episode_details.xml" value="0.3120471014492754" />
+        <entry key="..\:/Users/aleks/AndroidStudioProjects/BreakingBad2/app/src/main/res/layout/activity_episodes.xml" value="0.2962085308056872" />
         <entry key="..\:/Users/aleks/AndroidStudioProjects/BreakingBad2/app/src/main/res/layout/activity_main.xml" value="0.136" />
+        <entry key="..\:/Users/aleks/AndroidStudioProjects/BreakingBad2/app/src/main/res/layout/activity_quotes.xml" value="0.2962085308056872" />
         <entry key="..\:/Users/aleks/AndroidStudioProjects/BreakingBad2/app/src/main/res/layout/app_bar_main.xml" value="0.3033175355450237" />
         <entry key="..\:/Users/aleks/AndroidStudioProjects/BreakingBad2/app/src/main/res/layout/base_layout.xml" value="0.3910840932117528" />
         <entry key="..\:/Users/aleks/AndroidStudioProjects/BreakingBad2/app/src/main/res/layout/bottom_navigation.xml" value="0.2922998986828774" />
         <entry key="..\:/Users/aleks/AndroidStudioProjects/BreakingBad2/app/src/main/res/layout/content_main.xml" value="0.2962085308056872" />
         <entry key="..\:/Users/aleks/AndroidStudioProjects/BreakingBad2/app/src/main/res/layout/item_character.xml" value="0.3939393939393939" />
+        <entry key="..\:/Users/aleks/AndroidStudioProjects/BreakingBad2/app/src/main/res/layout/item_episode.xml" value="0.2962085308056872" />
+        <entry key="..\:/Users/aleks/AndroidStudioProjects/BreakingBad2/app/src/main/res/layout/item_quote.xml" value="0.3910840932117528" />
         <entry key="..\:/Users/aleks/AndroidStudioProjects/BreakingBad2/app/src/main/res/layout/nav_header_main.xml" value="0.3213367609254499" />
+        <entry key="..\:/Users/aleks/AndroidStudioProjects/BreakingBad2/app/src/main/res/layout/nav_layout.xml" value="0.2641843971631206" />
         <entry key="..\:/Users/aleks/AndroidStudioProjects/BreakingBad2/app/src/main/res/menu/activity_main_drawer.xml" value="0.4222222222222222" />
         <entry key="..\:/Users/aleks/AndroidStudioProjects/BreakingBad2/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.41388888888888886" />
         <entry key="..\:/Users/aleks/AndroidStudioProjects/BreakingBad2/app/src/main/res/menu/main.xml" value="0.41388888888888886" />

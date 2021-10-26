@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.aleksandrov.breakingbad.R
 import com.aleksandrov.breakingbad.presentation.characters.CharactersActivity
 import com.aleksandrov.breakingbad.presentation.deaths.DeathsActivity
+import com.aleksandrov.breakingbad.presentation.episodes.EpisodesActivity
+import com.aleksandrov.breakingbad.presentation.quotes.QuotesActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 abstract class BaseActivity(@LayoutRes private val layoutRes: Int) : AppCompatActivity() {
@@ -19,26 +21,23 @@ abstract class BaseActivity(@LayoutRes private val layoutRes: Int) : AppCompatAc
 
         bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.characters -> {
-                    openActivity(CharactersActivity::class.java)
-                    true
-                }
-                R.id.deaths -> {
-                    openActivity(DeathsActivity::class.java)
-                    true
-                }
+                R.id.characters -> openActivity(CharactersActivity::class.java)
+                R.id.deaths -> openActivity(DeathsActivity::class.java)
+                R.id.episodes -> openActivity(EpisodesActivity::class.java)
+                R.id.quotes -> openActivity(QuotesActivity::class.java)
                 else -> false
             }
         }
     }
 
-    private fun openActivity(clazz: Class<out BaseActivity>) {
+    private fun openActivity(clazz: Class<out BaseActivity>): Boolean {
         javaClass.also {
             if (it != clazz) {
                 val intent = Intent(this, clazz)
                 startActivity(intent)
             }
         }
+        return true
     }
 
 }
