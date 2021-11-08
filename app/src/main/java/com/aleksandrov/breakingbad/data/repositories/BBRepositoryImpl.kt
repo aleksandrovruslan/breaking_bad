@@ -3,10 +3,10 @@ package com.aleksandrov.breakingbad.data.repositories
 import com.aleksandrov.breakingbad.data.db.BBStore
 import com.aleksandrov.breakingbad.data.network.BreakingBadApi
 import com.aleksandrov.breakingbad.domain.BBRepository
-import com.aleksandrov.breakingbad.models.Character
-import com.aleksandrov.breakingbad.models.DeathCount
-import com.aleksandrov.breakingbad.models.Episode
-import com.aleksandrov.breakingbad.models.Quote
+import com.aleksandrov.breakingbad.domain.models.Character
+import com.aleksandrov.breakingbad.domain.models.DeathCount
+import com.aleksandrov.breakingbad.domain.models.Episode
+import com.aleksandrov.breakingbad.domain.models.Quote
 import javax.inject.Inject
 
 class BBRepositoryImpl @Inject constructor(

@@ -20,7 +20,7 @@ class DetailsActivity : BaseActivity(R.layout.activity_details) {
     @Inject
     lateinit var factory: ViewModelProvider.Factory
 
-    private lateinit var viewModel: DetailsViewModel
+    private lateinit var viewModel: CharacterDetailsViewModel
     private lateinit var img: ImageView
     private lateinit var name: TextView
     private lateinit var birthday: TextView
@@ -42,7 +42,7 @@ class DetailsActivity : BaseActivity(R.layout.activity_details) {
     }
 
     private fun initView() {
-        viewModel = ViewModelProvider(this, factory).get(DetailsViewModel::class.java)
+        viewModel = ViewModelProvider(this, factory).get(CharacterDetailsViewModel::class.java)
 
         val id: Int = intent.getIntExtra(CHARACTER_ID, -1)
         viewModel.loadCharacterById(id)

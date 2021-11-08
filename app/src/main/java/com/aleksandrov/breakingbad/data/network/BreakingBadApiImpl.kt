@@ -7,10 +7,10 @@ import com.aleksandrov.breakingbad.data.network.ApiUrls.EPISODES
 import com.aleksandrov.breakingbad.data.network.ApiUrls.EPISODE_BY_ID
 import com.aleksandrov.breakingbad.data.network.ApiUrls.QUOTES
 import com.aleksandrov.breakingbad.data.network.ApiUrls.RANDOM_CHARACTER
-import com.aleksandrov.breakingbad.models.Character
-import com.aleksandrov.breakingbad.models.DeathCount
-import com.aleksandrov.breakingbad.models.Episode
-import com.aleksandrov.breakingbad.models.Quote
+import com.aleksandrov.breakingbad.domain.models.Character
+import com.aleksandrov.breakingbad.domain.models.DeathCount
+import com.aleksandrov.breakingbad.domain.models.Episode
+import com.aleksandrov.breakingbad.domain.models.Quote
 import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
 import javax.inject.Inject

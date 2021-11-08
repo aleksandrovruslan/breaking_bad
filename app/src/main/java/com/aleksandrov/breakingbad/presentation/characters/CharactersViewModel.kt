@@ -1,12 +1,10 @@
 package com.aleksandrov.breakingbad.presentation.characters
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.aleksandrov.breakingbad.data.network.TAG
 import com.aleksandrov.breakingbad.domain.CharactersInteractor
-import com.aleksandrov.breakingbad.models.Character
+import com.aleksandrov.breakingbad.domain.models.Character
 import com.aleksandrov.breakingbad.utils.Event
 import com.aleksandrov.breakingbad.utils.SchedulersProvider
 import io.reactivex.rxjava3.core.Single
@@ -55,7 +53,6 @@ class CharactersViewModel @Inject constructor(
                         {
                             it.message?.also { message ->
                                 _error.value = Event(message)
-                                Log.d(TAG, message)
                             }
                             _progress.value = Event(false)
                         }

@@ -1,6 +1,6 @@
 package com.aleksandrov.breakingbad.domain
 
-import com.aleksandrov.breakingbad.models.Quote
+import com.aleksandrov.breakingbad.domain.models.Quote
 import javax.inject.Inject
 
 class QuotesInteractor @Inject constructor(private val repository: BBRepository) {
