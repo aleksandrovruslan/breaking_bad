@@ -10,8 +10,8 @@ class InteractorsModule {
 
     @Provides
     @Singleton
-    fun provideBBInteractor(repository: BBRepository): BBInteractor {
-        return BBInteractor(repository)
+    fun provideBBInteractor(repository: BBRepository): DeathsInteractor {
+        return DeathsInteractor(repository)
     }
 
     @Provides
@@ -22,8 +22,8 @@ class InteractorsModule {
 
     @Provides
     @Singleton
-    fun provideDetailsInteractor(repository: BBRepository): DetailsInteractor {
-        return DetailsInteractor(repository)
+    fun provideDetailsInteractor(repository: BBRepository): CharacterDetailsInteractor {
+        return CharacterDetailsInteractor(repository)
     }
 
     @Provides
@@ -34,8 +34,8 @@ class InteractorsModule {
 
     @Provides
     @Singleton
-    fun provideEpisodeDetainsInteractor(repository: BBRepository): EpisodeDetainsInteractor {
-        return EpisodeDetainsInteractor(repository)
+    fun provideEpisodeDetainsInteractor(repository: BBRepository): EpisodeDetailsInteractor {
+        return EpisodeDetailsInteractor(repository)
     }
 
     @Provides

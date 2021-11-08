@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.aleksandrov.breakingbad.R
-import com.aleksandrov.breakingbad.models.Quote
+import com.aleksandrov.breakingbad.domain.models.Quote
 
 class QuotesAdapter : ListAdapter<Quote, QuotesViewHolder>(QuotesDiff()) {
 

@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.aleksandrov.breakingbad.di.ViewModelKey
 import com.aleksandrov.breakingbad.domain.*
-import com.aleksandrov.breakingbad.presentation.characterdetails.DetailsViewModel
+import com.aleksandrov.breakingbad.presentation.characterdetails.CharacterDetailsViewModel
 import com.aleksandrov.breakingbad.presentation.characters.CharactersViewModel
 import com.aleksandrov.breakingbad.presentation.deaths.DeathCountViewModel
 import com.aleksandrov.breakingbad.presentation.episodedetails.EpisodeDetailsViewModel
@@ -24,7 +24,10 @@ class ViewModelsModule {
     @ViewModelKey(DeathCountViewModel::class)
     @IntoMap
     @Provides
-    fun providesBBViewModel(interactor: BBInteractor, schedulers: SchedulersProvider): ViewModel =
+    fun providesBBViewModel(
+        interactor: DeathsInteractor,
+        schedulers: SchedulersProvider,
+    ): ViewModel =
         DeathCountViewModel(interactor, schedulers)
 
     @ViewModelKey(CharactersViewModel::class)
@@ -35,13 +38,13 @@ class ViewModelsModule {
         schedulers: SchedulersProvider,
     ): ViewModel = CharactersViewModel(interactor, schedulers)
 
-    @ViewModelKey(DetailsViewModel::class)
+    @ViewModelKey(CharacterDetailsViewModel::class)
     @IntoMap
     @Provides
     fun provideDetailsViewModel(
-        interactor: DetailsInteractor,
+        interactor: CharacterDetailsInteractor,
         schedulers: SchedulersProvider,
-    ): ViewModel = DetailsViewModel(interactor, schedulers)
+    ): ViewModel = CharacterDetailsViewModel(interactor, schedulers)
 
     @ViewModelKey(EpisodesViewModel::class)
     @IntoMap
@@ -55,7 +58,7 @@ class ViewModelsModule {
     @IntoMap
     @Provides
     fun provideEpisodeDetailsViewModel(
-        interactor: EpisodeDetainsInteractor,
+        interactor: EpisodeDetailsInteractor,
         schedulers: SchedulersProvider,
     ): ViewModel = EpisodeDetailsViewModel(interactor, schedulers)
 

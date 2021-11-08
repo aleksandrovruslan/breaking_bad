@@ -3,16 +3,16 @@ package com.aleksandrov.breakingbad.presentation.characterdetails
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.aleksandrov.breakingbad.domain.DetailsInteractor
-import com.aleksandrov.breakingbad.models.Character
+import com.aleksandrov.breakingbad.domain.CharacterDetailsInteractor
+import com.aleksandrov.breakingbad.domain.models.Character
 import com.aleksandrov.breakingbad.utils.Event
 import com.aleksandrov.breakingbad.utils.SchedulersProvider
 import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import javax.inject.Inject
 
-class DetailsViewModel @Inject constructor(
-    private val interactor: DetailsInteractor,
+class CharacterDetailsViewModel @Inject constructor(
+    private val interactor: CharacterDetailsInteractor,
     private val schedulers: SchedulersProvider,
 ) :
     ViewModel() {

@@ -1,6 +1,6 @@
 package com.aleksandrov.breakingbad.domain
 
-import com.aleksandrov.breakingbad.models.Character
+import com.aleksandrov.breakingbad.domain.models.Character
 import javax.inject.Inject
 
 class CharactersInteractor @Inject constructor(private var repository: BBRepository) {

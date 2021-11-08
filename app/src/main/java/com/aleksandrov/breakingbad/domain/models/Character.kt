@@ -1,4 +1,4 @@
-package com.aleksandrov.breakingbad.models
+package com.aleksandrov.breakingbad.domain.models
 
 data class Character(
     var char_id: Int,

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.aleksandrov.breakingbad.R
-import com.aleksandrov.breakingbad.models.Character
+import com.aleksandrov.breakingbad.domain.models.Character
 import com.bumptech.glide.Glide
 
 class CharactersAdapter : ListAdapter<Character, CharacterItemViewHolder>(CharactersDiff()) {

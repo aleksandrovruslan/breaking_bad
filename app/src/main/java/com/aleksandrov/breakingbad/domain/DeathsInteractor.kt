@@ -1,9 +1,9 @@
 package com.aleksandrov.breakingbad.domain
 
-import com.aleksandrov.breakingbad.models.DeathCount
+import com.aleksandrov.breakingbad.domain.models.DeathCount
 import javax.inject.Inject
 
-class BBInteractor @Inject constructor(private var repository: BBRepository) {
+class DeathsInteractor @Inject constructor(private var repository: BBRepository) {
 
     /**
      * Получить количество смертей из хранилища

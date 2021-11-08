@@ -1,10 +1,10 @@
 package com.aleksandrov.breakingbad.data.db
 
 import android.content.SharedPreferences
-import com.aleksandrov.breakingbad.models.Character
-import com.aleksandrov.breakingbad.models.DeathCount
-import com.aleksandrov.breakingbad.models.Episode
-import com.aleksandrov.breakingbad.models.Quote
+import com.aleksandrov.breakingbad.domain.models.Character
+import com.aleksandrov.breakingbad.domain.models.DeathCount
+import com.aleksandrov.breakingbad.domain.models.Episode
+import com.aleksandrov.breakingbad.domain.models.Quote
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import javax.inject.Inject

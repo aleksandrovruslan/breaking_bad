@@ -1,9 +1,9 @@
 package com.aleksandrov.breakingbad.domain
 
-import com.aleksandrov.breakingbad.models.Episode
+import com.aleksandrov.breakingbad.domain.models.Episode
 import javax.inject.Inject
 
-class EpisodeDetainsInteractor @Inject constructor(private var repository: BBRepository) {
+class EpisodeDetailsInteractor @Inject constructor(private var repository: BBRepository) {
 
     /**
      * Получить эпизод по id

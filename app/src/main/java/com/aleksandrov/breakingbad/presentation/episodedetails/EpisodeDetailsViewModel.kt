@@ -3,8 +3,8 @@ package com.aleksandrov.breakingbad.presentation.episodedetails
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.aleksandrov.breakingbad.domain.EpisodeDetainsInteractor
-import com.aleksandrov.breakingbad.models.Episode
+import com.aleksandrov.breakingbad.domain.EpisodeDetailsInteractor
+import com.aleksandrov.breakingbad.domain.models.Episode
 import com.aleksandrov.breakingbad.utils.Event
 import com.aleksandrov.breakingbad.utils.SchedulersProvider
 import io.reactivex.rxjava3.core.Single
@@ -12,7 +12,7 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable
 import javax.inject.Inject
 
 class EpisodeDetailsViewModel @Inject constructor(
-    private val interactor: EpisodeDetainsInteractor,
+    private val interactor: EpisodeDetailsInteractor,
     private val schedulers: SchedulersProvider,
 ) :
     ViewModel() {
