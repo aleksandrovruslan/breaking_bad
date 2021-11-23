@@ -3,7 +3,7 @@ package com.aleksandrov.breakingbad.presentation.quotes
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.aleksandrov.breakingbad.domain.QuotesInteractor
+import com.aleksandrov.breakingbad.domain.interactors.QuotesInteractor
 import com.aleksandrov.breakingbad.domain.models.Quote
 import com.aleksandrov.breakingbad.utils.Event
 import com.aleksandrov.breakingbad.utils.SchedulersProvider

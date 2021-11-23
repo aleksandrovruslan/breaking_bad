@@ -1,6 +1,7 @@
 package com.aleksandrov.breakingbad.di.modules
 
-import com.aleksandrov.breakingbad.domain.*
+import com.aleksandrov.breakingbad.domain.interactors.*
+import com.aleksandrov.breakingbad.domain.repositories.BBRepository
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

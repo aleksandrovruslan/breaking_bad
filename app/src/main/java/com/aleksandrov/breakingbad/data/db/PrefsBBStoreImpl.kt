@@ -1,10 +1,10 @@
 package com.aleksandrov.breakingbad.data.db
 
 import android.content.SharedPreferences
-import com.aleksandrov.breakingbad.domain.models.Character
-import com.aleksandrov.breakingbad.domain.models.DeathCount
-import com.aleksandrov.breakingbad.domain.models.Episode
-import com.aleksandrov.breakingbad.domain.models.Quote
+import com.aleksandrov.breakingbad.data.db.entity.CharacterEntity
+import com.aleksandrov.breakingbad.data.db.entity.DeathCountEntity
+import com.aleksandrov.breakingbad.data.db.entity.EpisodeEntity
+import com.aleksandrov.breakingbad.data.db.entity.QuoteEntity
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import javax.inject.Inject
@@ -19,59 +19,65 @@ class PrefsBBStoreImpl @Inject constructor(
     private val moshi: Moshi,
 ) : BBStore {
 
-    override fun saveDeathCount(deathCount: DeathCount) {
-        val adapter: JsonAdapter<DeathCount> = moshi.adapter(DeathCount::class.java)
-        sharedPreferences.edit().putString(DEATH_COUNT, adapter.toJson(deathCount)).commit()
+    override fun saveDeathCount(deathCount: DeathCountEntity) {
+        val adapter: JsonAdapter<DeathCountEntity> = moshi.adapter(DeathCountEntity::class.java)
+        sharedPreferences.edit().putString(DEATH_COUNT, adapter.toJson(deathCount)).apply()
     }
 
-    override fun getDeathCount(): DeathCount? {
+    override fun getDeathCount(): DeathCountEntity? {
         val deathCountString = sharedPreferences.getString(DEATH_COUNT, null)
-        val adapter: JsonAdapter<DeathCount> = moshi.adapter(DeathCount::class.java)
+        val adapter: JsonAdapter<DeathCountEntity> = moshi.adapter(DeathCountEntity::class.java)
         return deathCountString?.let(adapter::fromJson)
     }
 
-    override fun saveCharacters(characters: List<Character>) {
-        val adapter: JsonAdapter<Array<Character>> = moshi.adapter(Array<Character>::class.java)
+    override fun saveCharacters(characters: List<CharacterEntity>) {
+        val adapter: JsonAdapter<Array<CharacterEntity>> =
+            moshi.adapter(Array<CharacterEntity>::class.java)
         sharedPreferences.edit().putString(CHARACTERS, adapter.toJson(characters.toTypedArray()))
-            .commit()
+            .apply()
     }
 
-    override fun getCharacters(): List<Character>? {
+    override fun getCharacters(): List<CharacterEntity>? {
         val characters = sharedPreferences.getString(CHARACTERS, null)
-        val adapter: JsonAdapter<Array<Character>> = moshi.adapter(Array<Character>::class.java)
+        val adapter: JsonAdapter<Array<CharacterEntity>> =
+            moshi.adapter(Array<CharacterEntity>::class.java)
         return characters?.let(adapter::fromJson)?.toList()
     }
 
-    override fun getCharacterById(id: Int): Character? = getCharacters()?.find { it.char_id == id }
+    override fun getCharacterById(id: Int): CharacterEntity? =
+        getCharacters()?.find { it.char_id == id }
 
-    override fun getRandomCharacter(): Character? = getCharacters()?.random()
+    override fun getRandomCharacter(): CharacterEntity? = getCharacters()?.random()
 
-    override fun findCharacterByName(name: String): List<Character>? =
+    override fun findCharacterByName(name: String): List<CharacterEntity>? =
         getCharacters()?.filter { it.name.equals(name, true) }
 
-    override fun getEpisodes(): List<Episode>? {
+    override fun getEpisodes(): List<EpisodeEntity>? {
         val episodes = sharedPreferences.getString(EPISODES, null)
-        val adapter: JsonAdapter<Array<Episode>> = moshi.adapter(Array<Episode>::class.java)
+        val adapter: JsonAdapter<Array<EpisodeEntity>> =
+            moshi.adapter(Array<EpisodeEntity>::class.java)
         return episodes?.let(adapter::fromJson)?.toList()
     }
 
-    override fun saveEpisodes(episodes: List<Episode>) {
-        val adapter: JsonAdapter<Array<Episode>> = moshi.adapter(Array<Episode>::class.java)
+    override fun saveEpisodes(episodes: List<EpisodeEntity>) {
+        val adapter: JsonAdapter<Array<EpisodeEntity>> =
+            moshi.adapter(Array<EpisodeEntity>::class.java)
         sharedPreferences.edit().putString(EPISODES, adapter.toJson(episodes.toTypedArray()))
-            .commit()
+            .apply()
     }
 
-    override fun getEpisodeById(id: Int): Episode? = getEpisodes()?.find { it.episode_id == id }
+    override fun getEpisodeById(id: Int): EpisodeEntity? =
+        getEpisodes()?.find { it.episode_id == id }
 
-    override fun getQuotes(): List<Quote>? {
+    override fun getQuotes(): List<QuoteEntity>? {
         val quotes = sharedPreferences.getString(QUOTES, null)
-        val adapter: JsonAdapter<Array<Quote>> = moshi.adapter(Array<Quote>::class.java)
+        val adapter: JsonAdapter<Array<QuoteEntity>> = moshi.adapter(Array<QuoteEntity>::class.java)
         return quotes?.let(adapter::fromJson)?.toList()
     }
 
-    override fun saveQuotes(quotes: List<Quote>) {
-        val adapter: JsonAdapter<Array<Quote>> = moshi.adapter(Array<Quote>::class.java)
-        sharedPreferences.edit().putString(QUOTES, adapter.toJson(quotes.toTypedArray())).commit()
+    override fun saveQuotes(quotes: List<QuoteEntity>) {
+        val adapter: JsonAdapter<Array<QuoteEntity>> = moshi.adapter(Array<QuoteEntity>::class.java)
+        sharedPreferences.edit().putString(QUOTES, adapter.toJson(quotes.toTypedArray())).apply()
     }
 
 }

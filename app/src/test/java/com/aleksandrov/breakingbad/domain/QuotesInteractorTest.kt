@@ -1,7 +1,9 @@
 package com.aleksandrov.breakingbad.domain
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.aleksandrov.breakingbad.domain.interactors.QuotesInteractor
 import com.aleksandrov.breakingbad.domain.models.Quote
+import com.aleksandrov.breakingbad.domain.repositories.BBRepository
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule

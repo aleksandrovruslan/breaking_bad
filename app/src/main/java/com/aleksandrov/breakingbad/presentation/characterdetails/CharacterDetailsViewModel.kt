@@ -3,7 +3,7 @@ package com.aleksandrov.breakingbad.presentation.characterdetails
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.aleksandrov.breakingbad.domain.CharacterDetailsInteractor
+import com.aleksandrov.breakingbad.domain.interactors.CharacterDetailsInteractor
 import com.aleksandrov.breakingbad.domain.models.Character
 import com.aleksandrov.breakingbad.utils.Event
 import com.aleksandrov.breakingbad.utils.SchedulersProvider

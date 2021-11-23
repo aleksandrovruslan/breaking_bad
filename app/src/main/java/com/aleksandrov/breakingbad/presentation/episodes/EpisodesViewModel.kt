@@ -3,7 +3,7 @@ package com.aleksandrov.breakingbad.presentation.episodes
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.aleksandrov.breakingbad.domain.EpisodesInteractor
+import com.aleksandrov.breakingbad.domain.interactors.EpisodesInteractor
 import com.aleksandrov.breakingbad.domain.models.Episode
 import com.aleksandrov.breakingbad.utils.Event
 import com.aleksandrov.breakingbad.utils.SchedulersProvider

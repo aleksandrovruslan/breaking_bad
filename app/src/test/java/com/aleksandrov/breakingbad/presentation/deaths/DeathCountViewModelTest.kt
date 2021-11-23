@@ -2,7 +2,7 @@ package com.aleksandrov.breakingbad.presentation.deaths
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import com.aleksandrov.breakingbad.domain.DeathsInteractor
+import com.aleksandrov.breakingbad.domain.interactors.DeathsInteractor
 import com.aleksandrov.breakingbad.domain.models.DeathCount
 import com.aleksandrov.breakingbad.utils.Event
 import com.aleksandrov.breakingbad.utils.SchedulersProvider

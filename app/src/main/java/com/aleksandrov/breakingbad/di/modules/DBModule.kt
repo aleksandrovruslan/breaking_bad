@@ -1,20 +1,34 @@
 package com.aleksandrov.breakingbad.di.modules
 
 import android.content.Context
+import com.aleksandrov.breakingbad.data.db.BBDbHelper
 import com.aleksandrov.breakingbad.data.db.BBStore
-import com.aleksandrov.breakingbad.data.db.DEATH_COUNT
-import com.aleksandrov.breakingbad.data.db.PrefsBBStoreImpl
-import com.squareup.moshi.Moshi
+import com.aleksandrov.breakingbad.data.db.SqliteBBStoreImpl
+import com.aleksandrov.breakingbad.domain.converters.BBConverter
+import com.aleksandrov.breakingbad.domain.converters.BBConverterImpl
 import dagger.Module
 import dagger.Provides
+import javax.inject.Singleton
 
 @Module
 class DBModule {
 
     @Provides
-    fun provideBBStore(context: Context, moshi: Moshi): BBStore {
-        return PrefsBBStoreImpl(context.getSharedPreferences(DEATH_COUNT, Context.MODE_PRIVATE),
-            moshi)
+    @Singleton
+    fun provideBBStore(helper: BBDbHelper): BBStore {
+        return SqliteBBStoreImpl(helper)
+    }
+
+    @Provides
+    @Singleton
+    fun provideBBDbHelper(context: Context): BBDbHelper {
+        return BBDbHelper(context)
+    }
+
+    @Provides
+    @Singleton
+    fun provideBBConverter(): BBConverter {
+        return BBConverterImpl()
     }
 
 }
