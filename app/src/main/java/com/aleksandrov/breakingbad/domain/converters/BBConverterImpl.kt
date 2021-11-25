@@ -16,14 +16,14 @@ class BBConverterImpl : BBConverter {
             character.char_id,
             character.name,
             character.birthday,
-            character.occupation,
+            character.occupation.split(","),
             character.img,
             character.status,
             character.nickname,
-            character.appearance,
+            character.appearance.split("").map(String::toInt),
             character.portrayed,
             character.category,
-            character.better_call_saul_appearance
+            character.better_call_saul_appearance.split(",")
         )
     }
 
@@ -37,7 +37,7 @@ class BBConverterImpl : BBConverter {
             episode.title,
             episode.season,
             episode.air_date,
-            episode.characters,
+            episode.characters.split(","),
             episode.episode,
             episode.series
         )
@@ -52,25 +52,26 @@ class BBConverterImpl : BBConverter {
             character.char_id,
             character.name,
             character.birthday,
-            character.occupation,
+            character.occupation.joinToString(","),
             character.img,
             character.status,
             character.nickname,
-            character.appearance,
+            character.appearance.joinToString(","),
             character.portrayed,
             character.category,
-            character.better_call_saul_appearance
+            character.better_call_saul_appearance.joinToString(",")
         )
     }
 
-    override fun reverse(count: DeathCount): DeathCountEntity = DeathCountEntity(count.deathCount)
+    override fun reverse(count: DeathCount): DeathCountEntity =
+        DeathCountEntity(deathCount = count.deathCount)
 
     override fun reverse(episode: Episode?): EpisodeEntity? = episode?.let {
         EpisodeEntity(episode.episode_id,
             episode.title,
             episode.season,
             episode.air_date,
-            episode.characters,
+            episode.characters.joinToString(","),
             episode.episode,
             episode.series)
     }
@@ -84,14 +85,18 @@ class BBConverterImpl : BBConverter {
             Character(character.char_id,
                 character.name,
                 character.birthday,
-                character.occupation,
+                character.occupation.split(","),
                 character.img,
                 character.status,
                 character.nickname,
-                character.appearance,
+                character.appearance.let {
+                    it.split(",").filter { it.contains("\\D*") }.let { list ->
+                        if (list.size > 0) list.map(String::toInt) else listOf()
+                    }
+                },
                 character.portrayed,
                 character.category,
-                character.better_call_saul_appearance)
+                character.better_call_saul_appearance.split(","))
         }
     }
 
@@ -100,14 +105,14 @@ class BBConverterImpl : BBConverter {
             CharacterEntity(character.char_id,
                 character.name,
                 character.birthday,
-                character.occupation,
+                character.occupation.joinToString(","),
                 character.img,
                 character.status,
                 character.nickname,
-                character.appearance,
+                character.appearance.joinToString(","),
                 character.portrayed,
                 character.category,
-                character.better_call_saul_appearance)
+                character.better_call_saul_appearance.joinToString(","))
         }
     }
 
@@ -117,7 +122,7 @@ class BBConverterImpl : BBConverter {
                 episode.title,
                 episode.season,
                 episode.air_date,
-                episode.characters,
+                episode.characters.split(","),
                 episode.episode,
                 episode.series)
         }
@@ -129,7 +134,7 @@ class BBConverterImpl : BBConverter {
                 episode.title,
                 episode.season,
                 episode.air_date,
-                episode.characters,
+                episode.characters.joinToString(","),
                 episode.episode,
                 episode.series)
         }
