@@ -1,8 +1,10 @@
 package com.aleksandrov.breakingbad.domain
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.aleksandrov.breakingbad.domain.interactors.EpisodesInteractor
 import com.aleksandrov.breakingbad.domain.models.Episode
-import junit.framework.Assert.assertEquals
+import com.aleksandrov.breakingbad.domain.repositories.BBRepository
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test

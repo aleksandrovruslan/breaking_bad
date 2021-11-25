@@ -3,7 +3,7 @@ package com.aleksandrov.breakingbad.presentation.deaths
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.aleksandrov.breakingbad.domain.DeathsInteractor
+import com.aleksandrov.breakingbad.domain.interactors.DeathsInteractor
 import com.aleksandrov.breakingbad.utils.Event
 import com.aleksandrov.breakingbad.utils.SchedulersProvider
 import io.reactivex.rxjava3.core.Single

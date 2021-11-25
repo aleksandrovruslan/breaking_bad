@@ -1,7 +1,9 @@
 package com.aleksandrov.breakingbad.domain
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.aleksandrov.breakingbad.domain.interactors.DeathsInteractor
 import com.aleksandrov.breakingbad.domain.models.DeathCount
+import com.aleksandrov.breakingbad.domain.repositories.BBRepository
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule

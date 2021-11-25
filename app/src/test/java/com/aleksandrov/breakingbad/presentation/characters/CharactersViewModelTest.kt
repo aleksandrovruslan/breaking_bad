@@ -2,7 +2,7 @@ package com.aleksandrov.breakingbad.presentation.characters
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import com.aleksandrov.breakingbad.domain.CharactersInteractor
+import com.aleksandrov.breakingbad.domain.interactors.CharactersInteractor
 import com.aleksandrov.breakingbad.domain.models.Character
 import com.aleksandrov.breakingbad.utils.Event
 import com.aleksandrov.breakingbad.utils.SchedulersProvider

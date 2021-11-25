@@ -1,4 +1,4 @@
-package com.aleksandrov.breakingbad.domain
+package com.aleksandrov.breakingbad.domain.repositories
 
 import com.aleksandrov.breakingbad.domain.models.Character
 import com.aleksandrov.breakingbad.domain.models.DeathCount

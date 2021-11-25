@@ -3,7 +3,7 @@ package com.aleksandrov.breakingbad.di.modules
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.aleksandrov.breakingbad.di.ViewModelKey
-import com.aleksandrov.breakingbad.domain.*
+import com.aleksandrov.breakingbad.domain.interactors.*
 import com.aleksandrov.breakingbad.presentation.characterdetails.CharacterDetailsViewModel
 import com.aleksandrov.breakingbad.presentation.characters.CharactersViewModel
 import com.aleksandrov.breakingbad.presentation.deaths.DeathCountViewModel

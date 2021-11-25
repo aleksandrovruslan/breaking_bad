@@ -1,9 +1,9 @@
 package com.aleksandrov.breakingbad.data.db
 
-import com.aleksandrov.breakingbad.domain.models.Character
-import com.aleksandrov.breakingbad.domain.models.DeathCount
-import com.aleksandrov.breakingbad.domain.models.Episode
-import com.aleksandrov.breakingbad.domain.models.Quote
+import com.aleksandrov.breakingbad.data.db.entity.CharacterEntity
+import com.aleksandrov.breakingbad.data.db.entity.DeathCountEntity
+import com.aleksandrov.breakingbad.data.db.entity.EpisodeEntity
+import com.aleksandrov.breakingbad.data.db.entity.QuoteEntity
 
 interface BBStore {
 
@@ -11,75 +11,75 @@ interface BBStore {
      * Сохранить количество смертей в хранилище
      * @param deathCount - количество смертей
      */
-    fun saveDeathCount(deathCount: DeathCount)
+    fun saveDeathCount(deathCount: DeathCountEntity)
 
     /**
      * Получить количество смертей из хранилища
      * @return количество смертей
      */
-    fun getDeathCount(): DeathCount?
+    fun getDeathCount(): DeathCountEntity?
 
     /**
      * Сохранить персонажей в хранилище
      * @param characters - персонажи
      */
-    fun saveCharacters(characters: List<Character>)
+    fun saveCharacters(characters: List<CharacterEntity>)
 
     /**
      * Получить список список персонажей из хранилища
      * @return персонажи
      */
-    fun getCharacters(): List<Character>?
+    fun getCharacters(): List<CharacterEntity>?
 
     /**
      * Получить персонажа по id из хранилища
      * @param id - id персонажа
      * @return персонаж
      */
-    fun getCharacterById(id: Int): Character?
+    fun getCharacterById(id: Int): CharacterEntity?
 
     /**
      * Получить случайного персонажа из хранилища
      * @return персонаж
      */
-    fun getRandomCharacter(): Character?
+    fun getRandomCharacter(): CharacterEntity?
 
     /**
      * Получить список персонажа по имени из хранилища
      * @param name - имя персонажа
      * @return список персонажей
      */
-    fun findCharacterByName(name: String): List<Character>?
+    fun findCharacterByName(name: String): List<CharacterEntity>?
 
     /**
      * Получить список эпизодов из хранилища
      * @return список эпизодов
      */
-    fun getEpisodes(): List<Episode>?
+    fun getEpisodes(): List<EpisodeEntity>?
 
     /**
      * Сохранить список эпизодов в хранилище
      * @param episodes - список эпизодов
      */
-    fun saveEpisodes(episodes: List<Episode>)
+    fun saveEpisodes(episodes: List<EpisodeEntity>)
 
     /**
      * Получить эпизод по id из хранилища
      * @param id - id эпизода
      * @return эпизод
      */
-    fun getEpisodeById(id: Int): Episode?
+    fun getEpisodeById(id: Int): EpisodeEntity?
 
     /**
      * Получить список цитат из хранилища
      * @return список цитат
      */
-    fun getQuotes(): List<Quote>?
+    fun getQuotes(): List<QuoteEntity>?
 
     /**
      * Сохранить список цитат в хранилище
      * @param quotes - список цитат
      */
-    fun saveQuotes(quotes: List<Quote>)
+    fun saveQuotes(quotes: List<QuoteEntity>)
 
 }

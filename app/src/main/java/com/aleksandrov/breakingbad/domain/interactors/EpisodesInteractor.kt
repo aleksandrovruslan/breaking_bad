@@ -1,6 +1,7 @@
-package com.aleksandrov.breakingbad.domain
+package com.aleksandrov.breakingbad.domain.interactors
 
 import com.aleksandrov.breakingbad.domain.models.Episode
+import com.aleksandrov.breakingbad.domain.repositories.BBRepository
 import javax.inject.Inject
 
 class EpisodesInteractor @Inject constructor(private val repository: BBRepository) {
