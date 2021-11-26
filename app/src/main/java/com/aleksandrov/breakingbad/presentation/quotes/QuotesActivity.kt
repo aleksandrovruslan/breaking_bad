@@ -8,6 +8,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.aleksandrov.breakingbad.R
 import com.aleksandrov.breakingbad.appComponent
 import com.aleksandrov.breakingbad.presentation.BaseActivity
+import com.aleksandrov.breakingbad.presentation.CommonItemDecoration
 import com.aleksandrov.breakingbad.utils.showMessage
 import javax.inject.Inject
 
@@ -40,6 +41,9 @@ class QuotesActivity : BaseActivity(R.layout.activity_quotes) {
         recyclerQuotes = findViewById(R.id.recycler_quotes)
         recyclerQuotes.layoutManager = LinearLayoutManager(this)
         recyclerQuotes.adapter = adapter
+        recyclerQuotes.addItemDecoration(CommonItemDecoration(
+            resources.getDimension(R.dimen.decoration_space_size).toInt())
+        )
 
         viewModel.quotes.observe(this) { adapter.submitList(it) }
         viewModel.progress.observe(this) {

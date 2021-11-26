@@ -9,6 +9,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.aleksandrov.breakingbad.R
 import com.aleksandrov.breakingbad.appComponent
 import com.aleksandrov.breakingbad.presentation.BaseActivity
+import com.aleksandrov.breakingbad.presentation.CommonItemDecoration
 import com.aleksandrov.breakingbad.presentation.characterdetails.CHARACTER_ID
 import com.aleksandrov.breakingbad.presentation.characterdetails.DetailsActivity
 import com.aleksandrov.breakingbad.utils.showError
@@ -42,6 +43,9 @@ class CharactersActivity : BaseActivity(R.layout.activity_characters), OnItemCli
 
         recyclerCharacters = findViewById(R.id.recycler_characters)
         recyclerCharacters.adapter = adapter
+        recyclerCharacters.addItemDecoration(CommonItemDecoration(
+            resources.getDimension(R.dimen.decoration_space_size).toInt())
+        )
         adapter.setListener(this)
         recyclerCharacters.layoutManager = LinearLayoutManager(this)
 

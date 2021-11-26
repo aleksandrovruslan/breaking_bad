@@ -9,6 +9,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.aleksandrov.breakingbad.R
 import com.aleksandrov.breakingbad.appComponent
 import com.aleksandrov.breakingbad.presentation.BaseActivity
+import com.aleksandrov.breakingbad.presentation.CommonItemDecoration
 import com.aleksandrov.breakingbad.presentation.episodedetails.EPISODE_ID
 import com.aleksandrov.breakingbad.presentation.episodedetails.EpisodeDetailsActivity
 import com.aleksandrov.breakingbad.utils.showError
@@ -43,6 +44,9 @@ class EpisodesActivity : BaseActivity(R.layout.activity_episodes), OnEpisodeItem
         episodesRecycler = findViewById(R.id.recycler_episodes)
         episodesRecycler.layoutManager = LinearLayoutManager(this)
         episodesRecycler.adapter = adapter
+        episodesRecycler.addItemDecoration(CommonItemDecoration(
+            resources.getDimension(R.dimen.decoration_space_size).toInt())
+        )
         adapter.setListener(this)
 
         viewModel.episodes.observe(this) {

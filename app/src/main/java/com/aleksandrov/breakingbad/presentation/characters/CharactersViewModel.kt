@@ -38,7 +38,13 @@ class CharactersViewModel @Inject constructor(
                     if (reload) {
                         interactor.getRemoteCharacters()
                     } else {
-                        interactor.getCharacters()
+                        interactor.getCharacters().let {
+                            if (it == null || it.isEmpty()) {
+                                interactor.getRemoteCharacters()
+                            } else {
+                                it
+                            }
+                        }
                     }
                 }
                     .subscribeOn(schedulers.io())

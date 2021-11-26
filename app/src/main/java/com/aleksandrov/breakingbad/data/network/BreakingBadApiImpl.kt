@@ -1,6 +1,5 @@
 package com.aleksandrov.breakingbad.data.network
 
-import android.util.Log
 import com.aleksandrov.breakingbad.data.network.ApiUrls.CHARACTERS
 import com.aleksandrov.breakingbad.data.network.ApiUrls.CHARACTERS_BY_ID
 import com.aleksandrov.breakingbad.data.network.ApiUrls.DEATH_COUNT
@@ -23,8 +22,6 @@ class BreakingBadApiImpl @Inject constructor(
     private val client: OkHttpClient,
     private val moshi: Moshi,
 ) : BreakingBadApi {
-
-    private val TAG = "BreakingBadApi"
 
     override fun deathCount(): DeathCount? = loadData<Array<DeathCount>>(DEATH_COUNT)?.first()
 
@@ -59,12 +56,9 @@ class BreakingBadApiImpl @Inject constructor(
             response = client.newCall(request).execute()
             return if (response.code == 200) {
                 response.body?.string()?.let {
-                    Log.d(TAG, it)
                     val adapter: JsonAdapter<T> =
                         moshi.adapter(T::class.java)
-                    adapter.fromJson(it).also {
-                        Log.d(TAG, "fromJson - $it")
-                    }
+                    adapter.fromJson(it)
                 }
             } else null
         }

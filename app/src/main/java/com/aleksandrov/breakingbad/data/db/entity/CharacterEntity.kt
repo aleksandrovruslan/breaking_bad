@@ -15,5 +15,5 @@ data class CharacterEntity(
     var appearance: String,
     var portrayed: String,
     var category: String,
-    var better_call_saul_appearance: String,
+    var better_call_saul_appearance: String?,
 )

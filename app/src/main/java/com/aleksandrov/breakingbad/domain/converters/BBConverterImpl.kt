@@ -20,10 +20,18 @@ class BBConverterImpl : BBConverter {
             character.img,
             character.status,
             character.nickname,
-            character.appearance.split("").map(String::toInt),
+            character.appearance.let {
+                it.split(",").filter(String::isNotEmpty).let { list ->
+                    if (list.isNotEmpty()) list.map(String::toInt) else listOf()
+                }
+            },
             character.portrayed,
             character.category,
-            character.better_call_saul_appearance.split(",")
+            character.better_call_saul_appearance?.let {
+                it.split(",").filter(String::isNotEmpty).let { list ->
+                    if (list.isNotEmpty()) list.map(String::toInt) else listOf()
+                }
+            }
         )
     }
 
@@ -59,7 +67,7 @@ class BBConverterImpl : BBConverter {
             character.appearance.joinToString(","),
             character.portrayed,
             character.category,
-            character.better_call_saul_appearance.joinToString(",")
+            character.better_call_saul_appearance?.joinToString(",")
         )
     }
 
@@ -90,13 +98,17 @@ class BBConverterImpl : BBConverter {
                 character.status,
                 character.nickname,
                 character.appearance.let {
-                    it.split(",").filter { it.contains("\\D*") }.let { list ->
-                        if (list.size > 0) list.map(String::toInt) else listOf()
+                    it.split(",").filter(String::isNotEmpty).let { list ->
+                        if (list.isNotEmpty()) list.map(String::toInt) else listOf()
                     }
                 },
                 character.portrayed,
                 character.category,
-                character.better_call_saul_appearance.split(","))
+                character.better_call_saul_appearance?.let {
+                    it.split(",").filter(String::isNotEmpty).let { list ->
+                        if (list.isNotEmpty()) list.map(String::toInt) else listOf()
+                    }
+                })
         }
     }
 
@@ -112,7 +124,7 @@ class BBConverterImpl : BBConverter {
                 character.appearance.joinToString(","),
                 character.portrayed,
                 character.category,
-                character.better_call_saul_appearance.joinToString(","))
+                character.better_call_saul_appearance?.joinToString(","))
         }
     }
 

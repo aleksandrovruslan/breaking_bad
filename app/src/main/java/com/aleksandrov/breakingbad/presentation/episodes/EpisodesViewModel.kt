@@ -35,7 +35,13 @@ class EpisodesViewModel @Inject constructor(
                     if (reload) {
                         interactor.loadRemoteEpisodes()
                     } else {
-                        interactor.loadEpisodes()
+                        interactor.loadEpisodes().let {
+                            if (it == null || it.isEmpty()) {
+                                interactor.loadRemoteEpisodes()
+                            } else {
+                                it
+                            }
+                        }
                     }
                 }
                     .subscribeOn(schedulers.io())

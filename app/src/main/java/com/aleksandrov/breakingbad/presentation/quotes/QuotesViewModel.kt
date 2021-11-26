@@ -34,7 +34,13 @@ class QuotesViewModel @Inject constructor(
                     if (reload) {
                         interactor.loadRemoteQuotes()
                     } else {
-                        interactor.loadQuotes()
+                        interactor.loadQuotes().let {
+                            if (it == null || it.isEmpty()) {
+                                interactor.loadRemoteQuotes()
+                            } else {
+                                it
+                            }
+                        }
                     }
                 }
                     .subscribeOn(schedulers.io())

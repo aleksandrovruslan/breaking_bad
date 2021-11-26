@@ -2,4 +2,8 @@
 <resources>
     <dimen name="text_size_18">18sp</dimen>
     <dimen name="margin_horizontal_10">10dp</dimen>
+    <dimen name="decoration_space_size">8dp</dimen>
+    <dimen name="item_padding_16">16dp</dimen>
+    <dimen name="character_details_margin_8">8dp</dimen>
+    <dimen name="character_details_padding_16">16dp</dimen>
 </resources>

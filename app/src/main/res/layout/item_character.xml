@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp">
+    android:background="@drawable/item_background"
+    android:padding="@dimen/item_padding_16">
 
     <ImageView
         android:id="@+id/img"
@@ -71,31 +72,31 @@
         android:id="@+id/appearance_prev"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Seasons: "
         android:textSize="@dimen/text_size_18"
         app:layout_constraintBottom_toTopOf="@+id/portrayed_prev"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nickname"
-        tools:text="Seasons: " />
+        app:layout_constraintTop_toBottomOf="@id/nickname" />
 
     <TextView
         android:id="@+id/appearance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="1, 2, 3, 4, 5"
         android:textSize="@dimen/text_size_18"
         app:layout_constraintBottom_toBottomOf="@id/appearance_prev"
         app:layout_constraintStart_toEndOf="@id/appearance_prev"
-        app:layout_constraintTop_toTopOf="@id/appearance_prev"
-        tools:text="1, 2, 3, 4, 5" />
+        app:layout_constraintTop_toTopOf="@id/appearance_prev" />
 
     <TextView
         android:id="@+id/portrayed_prev"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Actor: "
         android:textSize="@dimen/text_size_18"
         app:layout_constraintBottom_toTopOf="@id/better_call_saul_appearance_prev"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appearance_prev"
-        tools:text="Actor: " />
+        app:layout_constraintTop_toBottomOf="@id/appearance_prev" />
 
     <TextView
         android:id="@+id/portrayed"
@@ -111,12 +112,12 @@
         android:id="@+id/better_call_saul_appearance_prev"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Better Сall Saul seasons: "
         android:textSize="@dimen/text_size_18"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/portrayed_prev"
-        tools:text="Better Сall Saul seasons: " />
+        app:layout_constraintTop_toBottomOf="@+id/portrayed_prev" />
 
     <TextView
         android:id="@+id/better_call_saul_appearance"
