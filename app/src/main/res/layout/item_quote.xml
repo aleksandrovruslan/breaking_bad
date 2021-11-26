@@ -2,12 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_background"
+    android:padding="@dimen/item_padding_16">
 
     <TextView
         android:id="@+id/author"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/red"
         android:textSize="@dimen/text_size_18"
         tools:text="Walter White: " />
 
@@ -15,6 +20,7 @@
         android:id="@+id/quote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:textSize="@dimen/text_size_18"
         tools:text="I am not in danger, Skyler. I am the danger!" />
 

@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_background"
+    android:padding="@dimen/item_padding_16">
 
     <TextView
         android:id="@+id/title"
@@ -20,11 +22,11 @@
         android:id="@+id/season_prv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Season: "
         android:textSize="@dimen/text_size_18"
         app:layout_constraintBottom_toTopOf="@id/air_date_prv"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title"
-        tools:text="Season: " />
+        app:layout_constraintTop_toBottomOf="@id/title" />
 
     <TextView
         android:id="@+id/season"
@@ -80,11 +82,11 @@
         android:id="@+id/episode_prv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Episode: "
         android:textSize="@dimen/text_size_18"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/characters_prv"
-        tools:text="Episode: " />
+        app:layout_constraintTop_toBottomOf="@id/characters_prv" />
 
     <TextView
         android:id="@+id/episode"
@@ -93,6 +95,7 @@
         android:textSize="@dimen/text_size_18"
         app:layout_constraintBottom_toBottomOf="@id/episode_prv"
         app:layout_constraintStart_toEndOf="@id/episode_prv"
-        app:layout_constraintTop_toTopOf="@id/episode_prv" />
+        app:layout_constraintTop_toTopOf="@id/episode_prv"
+        tools:text="1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

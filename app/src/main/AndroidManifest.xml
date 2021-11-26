@@ -13,6 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BreakingBad">
         <activity
+            android:name=".presentation.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".presentation.quotes.QuotesActivity"
             android:exported="true" />
         <activity
@@ -26,17 +35,10 @@
             android:exported="true" />
         <activity
             android:name=".presentation.characters.CharactersActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".presentation.deaths.DeathsActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>

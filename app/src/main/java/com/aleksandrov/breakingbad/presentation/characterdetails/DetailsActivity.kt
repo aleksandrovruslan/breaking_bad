@@ -70,7 +70,7 @@ class DetailsActivity : BaseActivity(R.layout.activity_details) {
             nickname.text = character.nickname
             appearance.text = character.appearance.joinToString(", ")
             portrayed.text = character.portrayed
-            character.better_call_saul_appearance.also {
+            character.better_call_saul_appearance?.also {
                 if (it.isNotEmpty()) {
                     betterCallSaulAppearancePrev.visibility = View.VISIBLE
                     betterCallSaulAppearance.visibility = View.VISIBLE
